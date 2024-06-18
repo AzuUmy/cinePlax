@@ -1,0 +1,50 @@
+# Ignore compiled class files
+*.class
+
+# Ignore maven build directory
+target/
+
+# Ignore gradle build directories
+build/
+.gradle/
+
+# Ignore Eclipse files
+.classpath
+.project
+.settings/
+
+# Ignore IntelliJ IDEA files
+*.iml
+.idea/
+
+# Ignore NetBeans files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Ignore VS Code files
+.vscode/
+
+# Ignore Mac OS files
+.DS_Store
+
+# Ignore Windows files
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore other miscellaneous files
+*.war
+*.ear
+*.jar
+
+# Ignore generated documentation
+doc/
+
+# Ignore temporary files
+*~

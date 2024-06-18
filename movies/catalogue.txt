@@ -1,0 +1,2 @@
+nome: Furiosa uma Saga Mad Max, genero: Acao . Aventura, classificacao: 16, duracao: 02 . 29;
+nome: Creed III, genero: Acao . Drama . Sport, classificacao: 18, duracao: 01 . 56; 
