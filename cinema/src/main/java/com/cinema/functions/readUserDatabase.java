@@ -57,6 +57,7 @@ public static void readUser(){
                     int start  = line.indexOf("nome=") + "nome=".length();
                     int end = line.indexOf(",", start);
                     nome = line.substring(start, end);
+                    System.out.println("nome: " + nome);
                 }
 
                 if(line.contains("cpf=")){
@@ -85,6 +86,7 @@ public static void readUser(){
                 }
 
                 loginController.loginUsuario(email, senha, userId);
+                loginController.getUserData(email, userId, nome);
 
                }
 
@@ -94,8 +96,6 @@ public static void readUser(){
             }
         }
 
-}
-
-
+    }
 
 }

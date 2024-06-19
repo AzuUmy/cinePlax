@@ -17,8 +17,9 @@ import com.cinema.exception.ErroReadingFiles;
 public class creatUserDatabase  {
     private static final Logger logger = LogManager.getLogger(Main.class);
     private File userDir = new File("D:\\cinema\\cinema\\database\\Usuarios");    
-    public void creatUser(Map<UUID, Usuario> cadastroDeUsuario) throws ErroCreatingDatabase {
 
+
+    public void creatUser(Map<UUID, Usuario> cadastroDeUsuario) throws ErroCreatingDatabase {
 
             if(!userDir.exists()){
                 logger.info("cheking if the foulder exists");
@@ -58,6 +59,7 @@ public class creatUserDatabase  {
                         write.println("Id: " + entry.getKey() + "," + " " + entry.getValue().toString());
                         System.out.println("Sucesfully writing data");
                         logger.info("User inserted into table sucessfully");
+                        write.println();
                     }
 
                     write.flush();

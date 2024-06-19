@@ -11,7 +11,7 @@ import com.cinema.exception.ErroReadingFiles;
 
 public class readMovieTable {
     private static final Logger logger = LogManager.getLogger(Main.class);
-    private static File catalogueeDir = new File("D:\\cinema\\movies");
+    private static File catalogueeDir = new File("D:\\cinema\\cinema\\database\\movies");
 
     public static void readMovieCalatologue(){
         File calogueTable = new File(catalogueeDir, "catalogue.txt");
@@ -39,9 +39,9 @@ public class readMovieTable {
                 logger.info("Filling Variables with data");
                     if(line.contains("nome:")) {
                         logger.info("reading name from file");
-                        int start = line.indexOf("nome:") + "nome".length();
+                        int start = line.indexOf("nome:") + "nome:".length();
                         int end = line.indexOf(",");
-                        nome = line.substring(start, end);
+                        nome = line.substring(start, end).trim();
                     }
 
                     if(line.contains("genero:")){
@@ -57,7 +57,7 @@ public class readMovieTable {
                         logger.info("reading classfication from file");
                         int start = line.indexOf("classificacao:") + "classificacao:".length();
                         int end = line.indexOf(",", start);
-                        classificacao = line.substring(start, end);
+                        classificacao = line.substring(start, end).trim();
                     }
 
 

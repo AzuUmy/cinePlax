@@ -6,8 +6,19 @@ public class Usuario {
     private String celular;
     private String email;
     private String senha;
+    
 
     public Usuario() {}
+
+
+
+    
+
+    public Usuario(String nome) {
+        this.nome = nome;
+    }
+
+
 
     public Usuario(String nome, String cpf, String celular, String email, String senha) {
         this.nome = nome;
@@ -17,8 +28,8 @@ public class Usuario {
         this.senha = senha;
     }
 
-    
-//Construtor para reealizacao de login
+
+    //Construtor para reealizacao de login
     public Usuario(String email, String senha) {
         this.email = email;
         this.senha = senha;
@@ -28,6 +39,7 @@ public class Usuario {
     public String getNome() {
         return nome;
     }
+
 
     public String getCpf() {
         return cpf;

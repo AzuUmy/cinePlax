@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.cinema.CinePlax.Main;
 import com.cinema.Model.login;
+import com.cinema.Model.userSession;
 
 public class loginController {
         private static final Logger logger = LogManager.getLogger(Main.class);
@@ -18,11 +19,12 @@ public class loginController {
 
 
             UUID userId =  id;
+            
             login logInUser = new login(email, senha);
 
 
             fillUsersArray(userId, logInUser);
-
+            
             return logInUser;
 
         }
@@ -48,5 +50,16 @@ public class loginController {
                 }
             }
             return false;
+        }
+
+
+        public static userSession getUserData(String UserEmail, UUID userId, String userName){
+            
+             userSession userInfo = new userSession(userId, userName);
+             SessionManager.addSession(UserEmail, userId, userName);
+             System.out.println(userId + userName);
+
+            return userInfo;
+            
         }
 }

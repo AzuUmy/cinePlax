@@ -13,6 +13,9 @@ public class Catalogue {
     public Catalogue() {}
 
 
+    public Catalogue(String nome) {
+        this.nome = nome;
+    }
 
 
     public Catalogue(String nome, String[] genero, String classificacao, int hora, int minuto) {

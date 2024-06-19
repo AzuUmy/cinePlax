@@ -24,6 +24,7 @@ public class cartazView {
          //foreachLoop para viesualizar o filme
          logger.info("Reading catalogue Array");
          for (Catalogue catalog : catalogList) {
+            System.out.println("Nome: " + catalog.getNome());
             String[] generos = catalog.getGenero();
             for (int i = 0; i < generos.length; i++) {
                 System.out.print(generos[i]);
