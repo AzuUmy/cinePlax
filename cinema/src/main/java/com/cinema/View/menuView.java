@@ -1,6 +1,10 @@
 package com.cinema.View;
 import java.util.Scanner;
 
+import com.cinema.Controller.seatsController;
+import com.cinema.functions.readMovieDates;
+import com.cinema.functions.readSeats;
+
 
 
 public class menuView {
@@ -33,6 +37,9 @@ public class menuView {
                 case 4: 
                  buy();
                     break;
+                case 5:
+                 // seatsController.seatsList();
+                    break;    
                 default:
                     break;
             }

@@ -1,5 +1,6 @@
 package com.cinema.Model;
 
+
 public class Catalogue {
     
     private String nome;
@@ -7,14 +8,24 @@ public class Catalogue {
     private String classificacao;
     private int hora;
     private int minuto;
+    private String[] seat;
 
+
+    public Catalogue(String nome) {
+        this.nome = nome;
+    }
 
 
     public Catalogue() {}
 
 
-    public Catalogue(String nome) {
+    public Catalogue(String nome, String[] genero, String classificacao, int hora, int minuto, String[] seat) {
         this.nome = nome;
+        this.genero = genero;
+        this.classificacao = classificacao;
+        this.hora = hora;
+        this.minuto = minuto;
+        this.seat = seat;
     }
 
 
@@ -55,6 +66,11 @@ public class Catalogue {
 
     public int getMinuto() {
         return minuto;
+    }
+
+
+    public String[] getSeat() {
+        return seat;
     }
 
    

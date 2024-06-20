@@ -18,7 +18,7 @@ public class creatTicketsTable {
     private File ticketsDir = new File("D:\\cinema\\cinema\\database\\tickets");
 
 
-    public void cretUserTicket(userSession session, BuyTickets tickets) throws ErroReadingFiles{
+    public void cretUserTicket(userSession session, BuyTickets tickets, int quantity) throws ErroReadingFiles{
         System.out.println("Function called");
         File ticketsTable = new File(ticketsDir, session.getUserId() + 
          "-" + session.getNome() + "-"  + tickets.getNome() + "-" + ".txt");
@@ -33,23 +33,16 @@ public class creatTicketsTable {
                     System.out.println("failled to creat table");
                 }
                 
-                writeTicket(session, tickets);
+                writeTicket(session, tickets, quantity);
             }catch(IOException e){
                 throw new ErroReadingFiles(ErroReadingFiles.standadartMessage(e));
             }            
          }
     }
 
-    public void writeTicket(userSession session, BuyTickets tickets) throws IOException {
+    public void writeTicket(userSession session, BuyTickets tickets, int quantity) throws IOException {
         File movieTicket = new File(ticketsDir, session.getUserId() + 
         "-" + session.getNome() + "-"  + tickets.getNome() + "-" + ".txt");
-
-
-       // if (movieTicket.exists()) {
-       //     System.out.println("File found: " + movieTicket.getAbsolutePath());
-      //  } else {
-       //     System.out.println("File not found: " + movieTicket.getAbsolutePath());
-       // }
 
         FileWriter table = new FileWriter(movieTicket, true);
         PrintWriter write = new PrintWriter(table);
@@ -61,20 +54,11 @@ public class creatTicketsTable {
             write.println("Nome: " + buyTickets.getNome()
             + "," + " " + "Classificacao: " + buyTickets.getClassificacao() + "," + " " 
             + "Genero: " + String.join(" . ", buyTickets.getGenero()) + "," + " " +
-            "Duracao: " + buyTickets.getHora() + "h" + " e " +
-            buyTickets.getMinuto() + "m" + ";");
+            "Duracao: " + buyTickets.getHora() + "h" + " e "  +
+            buyTickets.getMinuto() + "m" + ", " + "Data: " +buyTickets.getData() + ", " +
+            "Reserva: " + buyTickets.getTimeReservation() + "," 
+            + " " + "Ascentos: " +  String.join(" ", buyTickets.getSeat())  + "," + " " + "Quantidade: " + quantity + ";");
         }
-
-       // for (BuyTickets filleTicket : ticket) {
-         //   write.println("Nome: " + filleTicket.getNome());
-          //  write.println("Gênero: " + String.join(", ", filleTicket.getGenero()));
-          //  write.println("Classificação: " + filleTicket.getClassificacao());
-          //  write.println("Duração: " + filleTicket.getHora() + "h " + filleTicket.getMinuto() + "min");
-         //   write.println("Data: " + filleTicket.getData());
-          //  write.println("Horário de Reserva: " + filleTicket.getHorarioReserva());
-          //  write.println("Minuto de Reserva: " + filleTicket.getMinutoReserva());
-      //  }
-
 
         write.flush();
         write.close();

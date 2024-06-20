@@ -9,21 +9,16 @@ public class buyTicketController {
 
     private static  UUID id = null;
 
-    public static BuyTickets buyMovieTickets(BuyTickets tickets) throws ErroReadingFiles{
-
-
+    public static BuyTickets buyMovieTickets(BuyTickets tickets, int quantity) throws ErroReadingFiles{
             userSession session = SessionManager.getUserDataFromSession(id);
-
-
             if(session != null){
                 creatTicketsTable creaUserTicket = new creatTicketsTable();
-                creaUserTicket.cretUserTicket(session, tickets);
+                creaUserTicket.cretUserTicket(session, tickets, quantity);
             }else{
                 System.out.println("Usuario nao logado");
             }
 
             return null;
-        
     }
 
 

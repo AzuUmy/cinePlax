@@ -15,7 +15,7 @@ public class cartazView {
 
       public static void main(String[] args) throws Exception  {
      
-          //invocacao do metodo de leeitura do catalogo
+        //invocacao do metodo de leitura do catalogo
         readMovieTable.readMovieCalatologue();
         //invocacao do metodo de preenchimento da array de controller retornando o getCartaz
          List<Catalogue> catalogList = catalogueController.getCartaz();
