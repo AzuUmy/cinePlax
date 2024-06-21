@@ -8,6 +8,7 @@ import com.cinema.CinePlax.Main;
 import com.cinema.Controller.SessionManager;
 import com.cinema.Controller.buyTicketController;
 import com.cinema.Controller.loginController;
+import com.cinema.Controller.readUserTickets;
 import com.cinema.Model.login;
 import com.cinema.Model.userSession;
 import com.cinema.functions.readUserDatabase;
@@ -42,6 +43,7 @@ public class loginView {
             System.out.println("Usuario logado com sucesso");
             ValidateUser(email);
             buyTicketController.validateUserInSession(email);
+            readUserTickets.validateUserInSession(email);
         }else{
             logger.warn("Credentials no founded user not loged in");
             System.out.println("Usuario nao logado");

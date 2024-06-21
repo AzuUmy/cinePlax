@@ -1,12 +1,6 @@
 package com.cinema.View;
 import java.util.Scanner;
 
-import com.cinema.Controller.seatsController;
-import com.cinema.functions.readMovieDates;
-import com.cinema.functions.readSeats;
-
-
-
 public class menuView {
     final static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
@@ -19,6 +13,7 @@ public class menuView {
             System.out.println("2: listar filmes em cartaz");
             System.out.println("3: Logar na aplicacao");
             System.out.println("4: comprar ingresso");
+            System.out.println("5: mostrar ingressos comprados");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -38,7 +33,7 @@ public class menuView {
                  buy();
                     break;
                 case 5:
-                 // seatsController.seatsList();
+                viewBougthTickets();
                     break;    
                 default:
                     break;
@@ -81,6 +76,16 @@ public class menuView {
     public static void buy(){
         try {
             buyTicketsView.main(new String[0]);
+        }catch (Exception e){
+         //   logger.error("Erro Executing User Registration" + e.getMessage());
+            //System.out.println("Erro Executing view login" + e.getMessage());
+        }
+    }
+
+
+    public static void viewBougthTickets(){
+        try {
+            viewUserTicket.main(new String[0]);
         }catch (Exception e){
          //   logger.error("Erro Executing User Registration" + e.getMessage());
             //System.out.println("Erro Executing view login" + e.getMessage());

@@ -48,7 +48,6 @@ public class readMovieTable {
                         logger.info("reading gender from file");
                         int start = line.indexOf("genero:") + "genero:".length();
                         int end = line.indexOf(",", start);
-                        if (end == -1) end = line.length();
                         String generoString = line.substring(start, end).trim();
                         genero = generoString.split("\\s*\\.\\s*");
                     }

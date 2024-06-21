@@ -57,7 +57,7 @@ public class creatTicketsTable {
             "Duracao: " + buyTickets.getHora() + "h" + " e "  +
             buyTickets.getMinuto() + "m" + ", " + "Data: " +buyTickets.getData() + ", " +
             "Reserva: " + buyTickets.getTimeReservation() + "," 
-            + " " + "Assentos: " +  String.join(" ", buyTickets.getSeat())  + "," + " " + "Quantidade: " + quantity + ";");
+            + " " + "Assentos: " +  String.join(".", buyTickets.getSeat())  + "," + " " + "Quantidade: " + quantity + ";");
         }
 
         write.flush();

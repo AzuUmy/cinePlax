@@ -21,9 +21,6 @@ public class buyTicketController {
             return null;
     }
 
-
-  
-
     public static void validateUserInSession(String email){
         if(SessionManager.isUserLoggedIn(email)){
             userSession UserSession = SessionManager.getUserSession(email);
