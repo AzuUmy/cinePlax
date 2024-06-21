@@ -1,7 +1,5 @@
-Id: 703836d9-bee4-4cae-add1-b2d98401a37d, nome=Carlos, cpf=12648530924, celular=41996794798, email=carlos_pherbis@hotmail.com, senha=123;
-Id: b514ebdf-bff7-463e-9910-2773a23d3fa7, nome=leticia, cpf=123412341, celular=12312423, email=leticia_teixeira@gmail.com, senha=123;
+Id: 703836d9-bee4-4cae-add1-b2d98401a37d, nome=Carlos, cpf=12648530924, celular=41996794798, email=carlos.pherbis223@gmail.com, senha=1234;
+Id: b514ebdf-bff7-463e-9910-2773a23d3fa7, nome=leticia, cpf=123412341, celular=12312423, email=leticia_antunes@hotmail.com, senha=123;
 Id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, nome=Andrew, cpf=1231243, celular=12312414123, email=Andrew_denis@gmail.com, senha=123;
-Id: f7839228-1894-4239-aea9-26b873f85dea, nome=B, cpf=1, celular=1, email=b@e.com, senha=123;
 Id: 258141ed-3460-4757-96e9-7aa06ba20bee, nome=Slash, cpf=123123, celular=123123, email=slash@guns.com, senha=123;
 Id: b4c1c44c-44ad-4bbb-ac43-77e1616a4191, nome=Luana, cpf=12321423, celular=123124123, email=luana_aparecida@gmail.com, senha=123;
-

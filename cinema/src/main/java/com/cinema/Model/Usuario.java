@@ -1,23 +1,18 @@
 package com.cinema.Model;
 
-public class Usuario {
+public  class Usuario  {
     private String nome;
     private String cpf;
     private String celular;
     private String email;
     private String senha;
-    
 
     public Usuario() {}
 
 
-
-    
-
     public Usuario(String nome) {
         this.nome = nome;
     }
-
 
 
     public Usuario(String nome, String cpf, String celular, String email, String senha) {
@@ -84,5 +79,7 @@ public class Usuario {
         return "nome=" + nome + ", cpf=" + cpf + ", celular=" + celular + ", email=" + email + ", senha="
                 + senha + ";";
     }
+
+
 
 }

@@ -14,6 +14,12 @@ public class userSession extends Usuario {
     }
 
 
+    public userSession(String email) {
+        super(email);
+    }
+
+
+
     public UUID getUserId() {
         return userId;
     }

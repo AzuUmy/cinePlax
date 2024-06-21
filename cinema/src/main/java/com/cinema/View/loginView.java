@@ -9,6 +9,7 @@ import com.cinema.Controller.SessionManager;
 import com.cinema.Controller.buyTicketController;
 import com.cinema.Controller.deleteTicket;
 import com.cinema.Controller.editTicket;
+import com.cinema.Controller.editUserData;
 import com.cinema.Controller.loginController;
 import com.cinema.Controller.readUserTickets;
 import com.cinema.Model.login;
@@ -48,6 +49,7 @@ public class loginView {
             readUserTickets.validateUserInSession(email);
             editTicket.validateUserInSession(email);
             deleteTicket.validateUserInSession(email);
+            editUserData.validateUserInSession(email);
         }else{
             logger.warn("Credentials no founded user not loged in");
             System.out.println("Usuario nao logado");

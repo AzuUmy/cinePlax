@@ -10,10 +10,23 @@ public class login extends Usuario{
         this.key = key;
     }
 
+
+
+
+    public login(String senha) {
+        super(senha);
+    }
+
+
+
+
     public login(String email, String senha) {
         super(email, senha);
        
     }
+
+
+    
 
      //Getters
         public UUID getKey() {
