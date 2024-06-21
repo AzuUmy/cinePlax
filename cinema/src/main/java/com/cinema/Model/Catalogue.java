@@ -18,6 +18,20 @@ public class Catalogue {
 
     public Catalogue() {}
 
+    
+
+    public Catalogue(String nome, String[] seat) {
+        this.nome = nome;
+        this.seat = seat;
+    }
+
+
+    public Catalogue(String nome, int hora, int minuto) {
+        this.nome = nome;
+        this.hora = hora;
+        this.minuto = minuto;
+    }
+
 
     public Catalogue(String nome, String[] genero, String classificacao, int hora, int minuto, String[] seat) {
         this.nome = nome;
@@ -73,7 +87,11 @@ public class Catalogue {
         return seat;
     }
 
-   
+
+    public void setSeat(String[] seat) {
+        this.seat = seat;
+    }
+
 
 
 }

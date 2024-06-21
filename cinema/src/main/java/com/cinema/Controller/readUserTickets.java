@@ -17,14 +17,9 @@ public class readUserTickets {
 
 
         
-        try{
-                   
-                    movieTicket userTicket = new movieTicket(nome,genero, classificacao,hour, minuto,seats,data,horario,quantidade);
-                    fillUserTicketArray(userTicket);
-
-                 
-                   
-
+        try{                   
+           movieTicket userTicket = new movieTicket(nome,genero, classificacao,hour, minuto,seats,data,horario,quantidade);
+           fillUserTicketArray(userTicket);
                     
         }catch (NullPointerException e){
             System.out.println("session is null");

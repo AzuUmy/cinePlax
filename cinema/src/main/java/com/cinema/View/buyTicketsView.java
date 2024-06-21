@@ -115,7 +115,7 @@ public static void main(String[] args) throws Exception  {
 
 
                     for (BuyTickets buyTickets : ticketSeats) {
-                        System.out.println("Seats: " + buyTickets.getSeats());
+                        System.out.println("Assentos: " + buyTickets.getSeats());
                     }
 
                  

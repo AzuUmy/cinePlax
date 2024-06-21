@@ -43,11 +43,6 @@ public class readSeats {
                     }
                 }
 
-
-                for (int seatNumber : seatNumbers) {
-                    System.out.println(seatNumber);
-                }
-
                 seatsController.seatsList(seatNumbers);
 
             } catch (IOException e) {

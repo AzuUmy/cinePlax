@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import com.cinema.CinePlax.Main;
 import com.cinema.Controller.SessionManager;
 import com.cinema.Controller.buyTicketController;
+import com.cinema.Controller.editTicket;
 import com.cinema.Controller.loginController;
 import com.cinema.Controller.readUserTickets;
 import com.cinema.Model.login;
@@ -44,6 +45,7 @@ public class loginView {
             ValidateUser(email);
             buyTicketController.validateUserInSession(email);
             readUserTickets.validateUserInSession(email);
+            editTicket.validateUserInSession(email);
         }else{
             logger.warn("Credentials no founded user not loged in");
             System.out.println("Usuario nao logado");

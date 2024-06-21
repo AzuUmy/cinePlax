@@ -5,10 +5,33 @@ public class movieTicket extends Catalogue{
     private String data;
     private String horario;
     private int quantidade;
+
     public movieTicket(){}
 
-  
+
+
+    public movieTicket(String nome, String data) {
+        super(nome);
+        this.data = data;
+    }
+
+
     
+    
+    public movieTicket(String nome, String[] seat) {
+        super(nome, seat);
+    }
+
+
+
+
+    public movieTicket(String nome, int hora, int minuto) {
+        super(nome, hora, minuto);
+    }
+
+
+
+
     public movieTicket(String nome, String[] genero, String classificacao, int hora, int minuto, String[] seat,
         String data, String horario, int quantidade) {
         super(nome, genero, classificacao, hora, minuto, seat);
