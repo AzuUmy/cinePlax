@@ -26,8 +26,6 @@ public class login extends Usuario{
     }
 
 
-    
-
      //Getters
         public UUID getKey() {
             return key;

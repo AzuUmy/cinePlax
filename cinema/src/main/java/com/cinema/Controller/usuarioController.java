@@ -32,8 +32,10 @@ public class usuarioController {
     }
 
     private static void validarDadosUsuario(Usuario usuario) throws ErroCadastroDeUsuario {
+        logger.info("validating user");
         if (usuario.getNome() == null || usuario.getCpf() == null || usuario.getCelular() == null ||
                 usuario.getEmail() == null || usuario.getSenha() == null) {
+                logger.error("error validating user data incomplete data");
             throw new ErroCadastroDeUsuario("Erro ao cadastrar usuário: dados incompletos");
         }
     }
@@ -48,5 +50,6 @@ public class usuarioController {
         creatUserDatabase insertUser = new creatUserDatabase();
         insertUser.creatUser(cadastroDeUsuario);
         cadastroDeUsuario.clear();
+        logger.info("Creating user table");
     }
 }

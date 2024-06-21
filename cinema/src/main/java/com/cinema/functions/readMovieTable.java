@@ -27,7 +27,6 @@ public class readMovieTable {
                 logger.info("Reading catalogue File");
                 String line;
                 String nome = "";
-               // String genero ="";
                 String classificacao ="";
                 String duracao = "";
                 int hour = 0;

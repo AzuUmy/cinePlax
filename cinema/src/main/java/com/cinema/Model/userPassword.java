@@ -5,7 +5,6 @@ public abstract class userPassword {
     private String password;
 
 
-
     public userPassword(String password) {
         this.password = password;
     }
@@ -19,7 +18,4 @@ public abstract class userPassword {
     }
 
     
-
-
-
 }

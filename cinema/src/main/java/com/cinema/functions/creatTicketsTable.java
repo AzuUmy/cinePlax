@@ -18,28 +18,31 @@ public class creatTicketsTable {
 
 
     public void cretUserTicket(userSession session, BuyTickets tickets, int quantity) throws ErroReadingFiles{
-        System.out.println("Function called");
+        logger.info("Function to creat user database called");
         File ticketsTable = new File(ticketsDir, session.getUserId() + 
          "-" + session.getNome() + "-"  + tickets.getNome() + "-" + ".txt");
 
          if(!ticketsTable.exists()){
             try{
+                logger.info("validating the user table folder");
                 boolean tableCreated = ticketsTable.createNewFile();
 
                 if(tableCreated){
-                    System.out.println("table created");
+                    logger.info("table created");
                 }else{
-                    System.out.println("failled to creat table");
+                    logger.error("failled to creat table");
                 }
                 
                 writeTicket(session, tickets, quantity);
             }catch(IOException e){
+                logger.error("erro folder does no exists");
                 throw new ErroReadingFiles(ErroReadingFiles.standadartMessage(e));
             }            
          }
     }
 
     public void writeTicket(userSession session, BuyTickets tickets, int quantity) throws IOException {
+        logger.info("writing user data on file");
         File movieTicket = new File(ticketsDir, session.getUserId() + 
         "-" + session.getNome() + "-"  + tickets.getNome() + "-" + ".txt");
 
@@ -62,6 +65,6 @@ public class creatTicketsTable {
         write.flush();
         write.close();
 
-        System.out.println("Finished writing to the file");
+        logger.info("Finished writing to the file");
     }
 }

@@ -3,10 +3,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.cinema.CinePlax.Main;
 import com.cinema.Controller.catalogueDatesController;
 
 public class readMovieDates {
+      private static final Logger logger = LogManager.getLogger(Main.class);
 private static File datesFile = new File("D:\\cinema\\cinema\\database\\moviesDate");
 
 
@@ -14,9 +17,9 @@ private static File datesFile = new File("D:\\cinema\\cinema\\database\\moviesDa
         File movieDate = new File(datesFile, "movieAvaibleDates.txt");
 
         if(movieDate.exists()){
-            System.out.println("File founded");
+            logger.info("File founded");
         }else{
-            System.out.println("File not founded");
+            logger.info("File not founded");
         }
 
 
@@ -64,7 +67,7 @@ private static File datesFile = new File("D:\\cinema\\cinema\\database\\moviesDa
                             String minute = splitTime[1];
 
                            }else{
-                            System.out.println("Invalid Formate");
+                            logger.info("Invalid Formate");
                            }
                         }
                     }
@@ -75,7 +78,7 @@ private static File datesFile = new File("D:\\cinema\\cinema\\database\\moviesDa
                 }
 
             }catch (IOException e){
-                System.out.println(e.getMessage());
+                logger.error(("error reading file: " + e.getMessage()));
             }
         }
 

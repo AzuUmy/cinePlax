@@ -2,6 +2,10 @@ package com.cinema.View;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.cinema.CinePlax.Main;
 import com.cinema.Controller.deleteTicket;
 import com.cinema.Controller.readUserTickets;
 import com.cinema.Model.Catalogue;
@@ -9,8 +13,9 @@ import com.cinema.Model.movieTicket;
 
 public class deleteTicketView {
         final static Scanner scanner = new Scanner(System.in);
+         private static final Logger logger = LogManager.getLogger(Main.class);
     public static void main(String[] args) throws Exception  {
-
+        logger.info("calling delte ticket menu");
         List<movieTicket> userMovieTikckest = readUserTickets.getUserTickets();
 
         System.out.println("Ingresso disponiveis para cancelar");

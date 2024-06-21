@@ -34,9 +34,9 @@ public class creatUserDatabase  {
                     boolean tableCreated = userTable.createNewFile();
 
                     if(tableCreated){
-                        System.out.println("database Table Created Suceesfully");
+                        logger.info("database Table Created Suceesfully");
                     }else{
-                        System.out.println("Erro Creating Database Table");
+                        logger.info("Erro Creating Database Table");
                     }
                 } catch (IOException e){
                     e.toString();
@@ -45,7 +45,6 @@ public class creatUserDatabase  {
                 }
                
             }else{
-                System.out.println("Table Already Exists");
                 logger.warn("Table Usuarios already Exists");
             } 
 
@@ -57,7 +56,6 @@ public class creatUserDatabase  {
 
                     for (Map.Entry<UUID, Usuario> entry : cadastroDeUsuario.entrySet()) {
                         write.println("Id: " + entry.getKey() + "," + " " + entry.getValue().toString());
-                        System.out.println("Sucesfully writing data");
                         logger.info("User inserted into table sucessfully");
                         write.println();
                     }

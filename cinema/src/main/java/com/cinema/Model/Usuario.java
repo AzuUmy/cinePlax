@@ -25,12 +25,14 @@ public  class Usuario  {
 
 
     //Construtor para reealizacao de login
+    
     public Usuario(String email, String senha) {
         this.email = email;
         this.senha = senha;
     }
 
     //Getters
+
     public String getNome() {
         return nome;
     }
@@ -52,6 +54,7 @@ public  class Usuario  {
         return senha;
         
     }
+
    //Setters
 
     public void setNome(String nome) {

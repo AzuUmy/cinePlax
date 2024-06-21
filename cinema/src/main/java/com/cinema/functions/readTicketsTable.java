@@ -11,12 +11,15 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.cinema.CinePlax.Main;
 import com.cinema.Controller.readUserTickets;
 import com.cinema.Model.movieTicket;
 import com.cinema.Model.userSession;
 
 public class readTicketsTable {
-
+ private static final Logger logger = LogManager.getLogger(Main.class);
     private static String ticketsTable = ("D:\\cinema\\cinema\\database\\tickets");
 
     public static void readTicketTable(userSession session) {
@@ -40,14 +43,16 @@ public class readTicketsTable {
                 }
             });
 
-            System.out.println("Total user tickets found: " + allUserTickets.size());
+            logger.info("Total user tickets found: " + allUserTickets.size());
         } catch (IOException e) {
             e.printStackTrace();
+            logger.error("Erro localizing file no file founded" + e.getMessage());
         }
     }
 
 
     private static List<movieTicket> readFile(File file, userSession session) {
+        logger.info("reading ticket files");
         List<movieTicket> userTickets = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
@@ -135,13 +140,13 @@ public class readTicketsTable {
                     
                     readUserTickets.readUserTicket(nome, classificacao, genero, hour, minute, seats, data, reserva, quantidade);
                 } catch (NumberFormatException | StringIndexOutOfBoundsException e) {
-                    System.out.println("Error parsing line: " + line + ". Skipping...");
+                    logger.error("Error parsing line: " + line + ". Skipping...");
                     continue;
                 }
             }
     
         } catch (IOException e) {
-            System.out.println("Error reading file: " + e.getMessage());
+           logger.error("Error reading file: " + e.getMessage());
         }
     
         return userTickets;

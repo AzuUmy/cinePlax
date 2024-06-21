@@ -5,6 +5,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.cinema.CinePlax.Main;
 import com.cinema.Model.movieTicket;
 import com.cinema.Model.userSession;
 
@@ -12,9 +17,10 @@ public class editedTickedInfo {
     
     private static File ticketsTable = new File("D:\\cinema\\cinema\\database\\tickets");
 
+  private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void editedTicketDate(userSession session, movieTicket movieDate){      
-       
+    logger.info("editing ticket date");
     File TicketFile = new File(ticketsTable, session.getUserId() + 
     "-" + session.getNome() + "-"  + movieDate.getNome() + "-" + ".txt");
 
@@ -23,12 +29,13 @@ public class editedTickedInfo {
             String pathOfFile = TicketFile.toString();
             editDateOnFile(movieDate.getData(), pathOfFile);
         }else {
-            System.out.println("File not founded");
+            logger.info("File not founded");
         }
 
     }
 
     public static void editDateOnFile(String date, String path){
+        logger.info("editing ticket date file");
        File file = new File(path);
        File storage = new File(file.getParentFile(), "Storage.txt");
 
@@ -49,7 +56,7 @@ public class editedTickedInfo {
             }
 
             if (!found) {
-                System.out.println("File not founded");
+                logger.info("File not founded");
             }
 
 
@@ -58,37 +65,40 @@ public class editedTickedInfo {
 
 
             if(!file.delete()){
-                System.out.println("Could not delete the file");
+               logger.info("Could not delete the file");
             }
 
             if (!storage.renameTo(file)) {
-                System.out.println("Could not rename to storage");
+               logger.info("Could not rename to storage");
             }
         }
         
        } catch (IOException e){
-        System.out.println("Failed to edit file");
+            logger.error("Failed to edit file");
        }
        
     }
 
 
     public static void editSession(userSession session, movieTicket movieTime){
+        logger.info("editing ticket session");
         File TicketFile = new File(ticketsTable, session.getUserId() + 
         "-" + session.getNome() + "-"  + movieTime.getNome() + "-" + ".txt");
 
-        if(TicketFile.isFile()){
+        if(TicketFile.isFile()){    
+            logger.info("ticket file validate");
             String pathOfFile = TicketFile.toString();
           
             editeMovieSession(movieTime.getHora(), movieTime.getMinuto(), pathOfFile);
         }else {
-            System.out.println("File not founded");
+            logger.error("File not founded");
         }
     
     }
 
 
     public static void editeMovieSession(int hora, int minuto, String path){
+        logger.info("eciting movie session");
         File file = new File(path);
         File storage = new File(file.getParentFile(), "Storage.txt");
 
@@ -114,7 +124,7 @@ public class editedTickedInfo {
 
 
                 if (!found) {
-                    System.out.println("File not founded");
+                    logger.info("File not founded");
                 }
     
                 writer.close();
@@ -122,36 +132,39 @@ public class editedTickedInfo {
     
     
               if(!file.delete()){
-                  System.out.println("Could not delete the file");
+                logger.info("Could not delete the file");
                }
     
                 if (!storage.renameTo(file)) {
-                    System.out.println("Could not rename to storage");
+                    logger.info("Could not rename to storage");
                }
             }
 
         } catch(IOException e){
-            System.out.println("File not founded");
+            logger.error("File not founded");
         }
 
     }
 
 
     public static void editSets(userSession session, movieTicket movieSeats){
+        logger.info("editing seats");
         File TicketFile = new File(ticketsTable, session.getUserId() + 
         "-" + session.getNome() + "-"  + movieSeats.getNome() + "-" + ".txt");
 
         if(TicketFile.isFile()){
+            logger.info("ticket file is a file");
             String pathOfFile = TicketFile.toString();
           
             editeMovieSeats(movieSeats.getSeat(), pathOfFile);
         }else {
-            System.out.println("File not founded on edit sets");
+            logger.info("File not founded on edit sets");
         }
     
     }
 
     public static void editeMovieSeats(String[] seats, String path) {
+        logger.info("Editing movie seats");
         File file = new File(path);
         File storage = new File(file.getParentFile(), "Storage.txt");
 
@@ -186,21 +199,21 @@ public class editedTickedInfo {
                 reader.close();
 
                 if(!file.delete()){
-                    System.out.println("Could not delete the file");
+                    logger.info("Could not delete the file");
                  }
       
                   if (!storage.renameTo(file)) {
-                      System.out.println("Could not rename to storage");
+                    logger.info("Could not rename to storage");
                  }
 
             }
 
             if (!found) {
-                System.out.println("No line containing 'Assentos:' found in the file.");
+                logger.info("No line containing 'Assentos:' found in the file.");
             }
 
         } catch (IOException e) {
-            System.out.println("Error editing file: " + e.getMessage());
+             logger.error("Error editing file: " + e.getMessage());
         }
 
     }

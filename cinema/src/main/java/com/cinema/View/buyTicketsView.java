@@ -1,6 +1,9 @@
 package com.cinema.View;
 import java.util.List;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.cinema.CinePlax.Main;
 import com.cinema.Controller.buyTicketController;
 import com.cinema.Controller.catalogueController;
 import com.cinema.Controller.catalogueDatesController;
@@ -17,8 +20,9 @@ import com.cinema.functions.readSeats;
 
 public class buyTicketsView {
       final static Scanner scanner = new Scanner(System.in);
+      private static final Logger logger = LogManager.getLogger(Main.class);
 public static void main(String[] args) throws Exception  {
-     
+     logger.info("runnign buy ticket menu");
 
     readMovieTable.readMovieCalatologue();
     List<Catalogue> catalogList = catalogueController.getCartaz();
@@ -53,7 +57,7 @@ public static void main(String[] args) throws Exception  {
      System.out.println("Selecione o filme que deseja assitir");
      int index = scanner.nextInt();
 
-     //metodo para escrever o nome do filme no nome do arquivo
+    //metodo para escrever o nome do filme no nome do arquivo
      if (index >= 0 && index < catalogList.size()) {
         Catalogue selectedMovie = catalogList.get(index);
 
@@ -107,7 +111,6 @@ public static void main(String[] args) throws Exception  {
                 timeIndex = scanner.nextInt();
            }
 
-           //===================================================================================//
 
 
            System.out.println("Quantidade Ingressos");
@@ -122,7 +125,6 @@ public static void main(String[] args) throws Exception  {
                   
                     System.out.println("Selecione os assentos (exemplo: 1 2 3):");
 
-                    // Consume newline character left by previous scanner.nextInt()
                     scanner.nextLine();
                     
                     String acento = scanner.nextLine();
@@ -161,7 +163,7 @@ public static void main(String[] args) throws Exception  {
  
         
      }else {
-        System.out.println("no movies avaible");
+        logger.info("no movies avaible");
      }
      
     }

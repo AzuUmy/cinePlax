@@ -12,7 +12,6 @@ import com.cinema.functions.readMovieTable;
 public class cartazView {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
-
       public static void main(String[] args) throws Exception  {
      
         //invocacao do metodo de leitura do catalogo
@@ -21,7 +20,7 @@ public class cartazView {
          List<Catalogue> catalogList = catalogueController.getCartaz();
       
 
-         //foreachLoop para viesualizar o filme
+         //foreachLoop para visualizar o filme
          logger.info("Reading catalogue Array");
          for (Catalogue catalog : catalogList) {
             System.out.println("Nome: " + catalog.getNome());

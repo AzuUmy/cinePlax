@@ -1,14 +1,18 @@
 package com.cinema.View;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.cinema.CinePlax.Main;
 import com.cinema.Controller.readUserTickets;
 import com.cinema.Model.movieTicket;
 
 public class viewUserTicket {
     
-
+private static final Logger logger = LogManager.getLogger(Main.class);
     public static void main(String[] args) throws Exception  {
+        
 
-
+        logger.info("Main menu Running");
     
     List<movieTicket> userMovieTikckest = readUserTickets.getUserTickets();
 

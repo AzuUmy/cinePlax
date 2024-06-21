@@ -1,10 +1,14 @@
 package com.cinema.View;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.cinema.CinePlax.Main;
 
 public class menuView {
     final static Scanner scanner = new Scanner(System.in);
+     private static final Logger logger = LogManager.getLogger(Main.class);
     public static void main(String[] args) {
-      
+        logger.info("running main menu");
         int runtime = 100;
 
         for(int i = 0; i < runtime; i++){
@@ -59,12 +63,12 @@ public class menuView {
     }
 
 
-//Creat a class ta handles this exceptions
+
     public static void executeCreatUser(){
         try {
             cadasstroDeUsuarioView.main(new String[0]);
         }catch (Exception e){
-          //  logger.error("Erro Executing User Registration" + e.getMessage());
+         
             System.out.println("Erro Executing User Registration" + e.getMessage());
         }
     }
@@ -73,7 +77,7 @@ public class menuView {
         try {
             cartazView.main(new String[0]);
         }catch (Exception e){
-         //   logger.error("Erro Executing User Registration" + e.getMessage());
+
             System.out.println("Erro Executing view Catalogue" + e.getMessage());
         }
     }
@@ -83,7 +87,7 @@ public class menuView {
         try {
             loginView.main(new String[0]);
         }catch (Exception e){
-         //   logger.error("Erro Executing User Registration" + e.getMessage());
+      
             System.out.println("Erro Executing view login" + e.getMessage());
         }
     }
@@ -93,8 +97,7 @@ public class menuView {
         try {
             buyTicketsView.main(new String[0]);
         }catch (Exception e){
-         //   logger.error("Erro Executing User Registration" + e.getMessage());
-            //System.out.println("Erro Executing view login" + e.getMessage());
+         logger.error("Erro Executing buy ticket" + e.getMessage());
         }
     }
 
@@ -103,8 +106,7 @@ public class menuView {
         try {
             viewUserTicket.main(new String[0]);
         }catch (Exception e){
-         //   logger.error("Erro Executing User Registration" + e.getMessage());
-            //System.out.println("Erro Executing view login" + e.getMessage());
+             logger.error("Erro Executing view tickets" + e.getMessage());        
         }
     }
 
@@ -112,8 +114,7 @@ public class menuView {
         try {
             editTicketView.main(new String[0]);
         }catch (Exception e){
-         //   logger.error("Erro Executing User Registration" + e.getMessage());
-            //System.out.println("Erro Executing view login" + e.getMessage());
+            logger.error("Erro Executing edit ticket" + e.getMessage());
         }
     }
 
@@ -121,8 +122,7 @@ public class menuView {
         try {
             deleteTicketView.main(new String[0]);
         }catch (Exception e){
-         //   logger.error("Erro Executing User Registration" + e.getMessage());
-            //System.out.println("Erro Executing view login" + e.getMessage());
+             logger.error("Erro Executing delete ticket" + e.getMessage());
         }
     }
 
@@ -130,8 +130,8 @@ public class menuView {
         try {
             editUserInfo.main(new String[0]);
         }catch (Exception e){
-         //   logger.error("Erro Executing User Registration" + e.getMessage());
-            //System.out.println("Erro Executing view login" + e.getMessage());
+            logger.error("Erro Executing edit user credentials" + e.getMessage());
+
         }
     }
 

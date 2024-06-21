@@ -20,7 +20,6 @@ public class Main {
             menuView.main(new String[0]);
         }catch (Exception e){
             logger.error("Erro Executing User Registration" + e.getMessage());
-            System.out.println("Erro Executing User Registration" + e.getMessage());
         }
     }
 

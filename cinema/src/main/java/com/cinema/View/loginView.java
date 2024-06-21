@@ -43,7 +43,6 @@ public class loginView {
 
         if(isValid){
             logger.info("Credential Valide user loged in");
-            System.out.println("Usuario logado com sucesso");
             ValidateUser(email);
             buyTicketController.validateUserInSession(email);
             readUserTickets.validateUserInSession(email);
@@ -52,16 +51,15 @@ public class loginView {
             editUserData.validateUserInSession(email);
         }else{
             logger.warn("Credentials no founded user not loged in");
-            System.out.println("Usuario nao logado");
         }
     }
 
     public static void ValidateUser(String email){
         if(SessionManager.isUserLoggedIn(email)){
             userSession UserSession = SessionManager.getUserSession(email);
-            System.out.println("user logedin: " + UserSession.getNome());
+            logger.info("user logedin: " + UserSession.getNome());
         }else{
-            System.out.println("please log in on the aplication to buy a ticket");
+            logger.info("please log in on the aplication to buy a ticket");
         }
     }
 }

@@ -10,7 +10,6 @@ import com.cinema.Model.userSession;
 
 public class loginController {
         private static final Logger logger = LogManager.getLogger(Main.class);
-       
         private static Map<UUID, login> loginInto = new HashMap<>();
 
         public static login loginUsuario(String email, String senha, UUID id){
@@ -46,6 +45,7 @@ public class loginController {
             logger.info("Validating user credentials");
             for (login user : loginInto.values()) {
                 if(user.getEmail().equals(email) && user.getSenha().equals(Senha)){
+                    logger.info("usser validate credentials");
                     return true;
                 }
             }
@@ -54,10 +54,10 @@ public class loginController {
 
 
         public static userSession getUserData(String UserEmail, UUID userId, String userName){
-            
+            logger.info("retriving user data");
              userSession userInfo = new userSession(userId, userName);
              SessionManager.addSession(UserEmail, userId, userName);
-             System.out.println(userId + userName);
+             logger.info(userId + userName);
 
             return userInfo;
             
