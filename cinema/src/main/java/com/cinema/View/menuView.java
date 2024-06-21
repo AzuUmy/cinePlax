@@ -15,6 +15,7 @@ public class menuView {
             System.out.println("4: comprar ingresso");
             System.out.println("5: mostrar ingressos comprados");
             System.out.println("6: editar ingresso");
+            System.out.println("7: deletar ingresso");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -39,6 +40,10 @@ public class menuView {
                     
                     case 6:
                     editUserTicket();
+                    break;
+
+                    case 7:
+                    deleteTicker(); 
                     break;
                 default:
                     break;
@@ -100,6 +105,15 @@ public class menuView {
     public static void editUserTicket(){
         try {
             editTicketView.main(new String[0]);
+        }catch (Exception e){
+         //   logger.error("Erro Executing User Registration" + e.getMessage());
+            //System.out.println("Erro Executing view login" + e.getMessage());
+        }
+    }
+
+    public static void deleteTicker(){
+        try {
+            deleteTicketView.main(new String[0]);
         }catch (Exception e){
          //   logger.error("Erro Executing User Registration" + e.getMessage());
             //System.out.println("Erro Executing view login" + e.getMessage());

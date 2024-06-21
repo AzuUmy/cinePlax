@@ -17,7 +17,12 @@ public class movieTicket extends Catalogue{
 
 
     
-    
+
+    public movieTicket(String nome) {
+        super(nome);
+    }
+
+
     public movieTicket(String nome, String[] seat) {
         super(nome, seat);
     }

@@ -1,8 +1,8 @@
 package com.cinema.Controller;
-import java.util.List;
+
 import java.util.UUID;
 
-import com.cinema.Model.BuyTickets;
+
 import com.cinema.Model.movieTicket;
 import com.cinema.Model.userSession;
 import com.cinema.functions.editedTickedInfo;
