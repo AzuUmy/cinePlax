@@ -23,9 +23,10 @@ public class readTicketsTable {
     private static String ticketsTable = ("D:\\cinema\\cinema\\database\\tickets");
 
     public static void readTicketTable(userSession session) {
+        readUserTickets.clearTickets();
         String userIdString = session.getUserId().toString();
         Path ticketsDirectory = Paths.get(ticketsTable);
-
+       
         try {
             List<movieTicket> allUserTickets = new ArrayList<>();
             Files.walkFileTree(ticketsDirectory, new SimpleFileVisitor<Path>() {
@@ -54,6 +55,9 @@ public class readTicketsTable {
     private static List<movieTicket> readFile(File file, userSession session) {
         logger.info("reading ticket files");
         List<movieTicket> userTickets = new ArrayList<>();
+
+        
+
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             String nome = "";

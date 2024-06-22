@@ -20,24 +20,27 @@ public class catalogueController {
         que depois sera empurrado ao array de cartza na funcao fillMovieArray*/ 
         Catalogue catalogo = new Catalogue(nome, genero, clasificacao, hour, minute);
 
-        //invoca as funcoes  de prencher a array;
+        //invoca as funcoes de validar e de prencher a array;
             fillMovieArray(catalogo);
     
 
         return catalogo;
     }
 
-
+    public static void clearCartaz() {
+        logger.info("Clearing catalog array");
+        cartaz.clear();
+    }
 
     //funcao para adicionar todas informacoes do catalogo a array de cartaz
-    private static void fillMovieArray(Catalogue catologo){
+    public static void fillMovieArray(Catalogue catologo){
         logger.info("Adding data of catalogue into array");
         cartaz.add(catologo);
     }
 
     //funcao para para invocar o catalogo na view
     public static List<Catalogue> getCartaz() {
-        logger.info("Calling catalogue function");
+        logger.info("Calling catalogue");
         return cartaz;
     }
 }

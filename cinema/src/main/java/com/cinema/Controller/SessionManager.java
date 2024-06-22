@@ -17,7 +17,7 @@ public class SessionManager {
     }
 
     public static void removeSession(String email) {
-        logger.info("Retriving email");
+        logger.info("Retriving email to unloag");
         sessionMap.remove(email);
     }
 

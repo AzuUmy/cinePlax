@@ -16,6 +16,8 @@ public class readSeats {
     private static File seatsTable = new File("D:\\cinema\\cinema\\database\\seats");
 
     public static void readSeatsTable() {
+        logger.info("clearing Seats Array");
+        seatsController.clearSeats();
         logger.info("reading seatles table");
         File seatsFile = new File(seatsTable, "seats.txt");
 

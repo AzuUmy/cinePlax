@@ -50,6 +50,12 @@ public class readUserTickets {
         userTickets.add(userTicket);
     }
 
+
+
+    public static void clearTickets() {
+        logger.info("Clearing catalog array");
+        userTickets.clear();
+    }
     
 
     public static List<movieTicket> getUserTickets(){
@@ -57,7 +63,7 @@ public class readUserTickets {
         try{
             userSession session = SessionManager.getUserDataFromSession(id);
             if (session != null) {
-                logger.info("validating user"); 
+                logger.info("validating user and reading tickets table"); 
                 readTicketsTable.readTicketTable(session);
             }else{
                 logger.info("uer not loged in");

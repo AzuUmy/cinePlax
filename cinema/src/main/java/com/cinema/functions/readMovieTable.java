@@ -14,6 +14,7 @@ public class readMovieTable {
     private static File catalogueeDir = new File("D:\\cinema\\cinema\\database\\movies");
 
     public static void readMovieCalatologue(){
+        catalogueController.clearCartaz();
         File calogueTable = new File(catalogueeDir, "catalogue.txt");
 
         if(calogueTable.exists()){
@@ -23,6 +24,7 @@ public class readMovieTable {
        
         if (calogueTable.isFile()) {
             logger.info("Catalogue is a file");
+          
             try(BufferedReader reader = new BufferedReader(new FileReader(calogueTable))){
                 logger.info("Reading catalogue File");
                 String line;

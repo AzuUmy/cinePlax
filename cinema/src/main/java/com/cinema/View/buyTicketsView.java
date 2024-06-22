@@ -1,8 +1,10 @@
 package com.cinema.View;
 import java.util.List;
 import java.util.Scanner;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import com.cinema.CinePlax.Main;
 import com.cinema.Controller.buyTicketController;
 import com.cinema.Controller.catalogueController;
@@ -61,15 +63,14 @@ public static void main(String[] args) throws Exception  {
      if (index >= 0 && index < catalogList.size()) {
         Catalogue selectedMovie = catalogList.get(index);
 
-        System.out.println(selectedMovie.getNome());
+        System.out.println("Selectd movie" + selectedMovie.getNome());
 
 
      // Display available dates for the selected movie
            movieDates selectedMovieDates = null;
 
             for (movieDates datesOfCatalogue : movieTimeAndDate) {
-
-              System.out.println("movie return: " + datesOfCatalogue.getNome());
+              //System.out.println("movie return: " + datesOfCatalogue.getNome());
                 if (datesOfCatalogue.getNome().equals(selectedMovie.getNome())) {
                     selectedMovieDates = datesOfCatalogue;
                     break;
@@ -110,6 +111,7 @@ public static void main(String[] args) throws Exception  {
                 System.out.println("Selecione o horario do filme");
                 timeIndex = scanner.nextInt();
            }
+
 
 
 

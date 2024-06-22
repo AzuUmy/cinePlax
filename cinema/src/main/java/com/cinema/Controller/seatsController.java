@@ -22,6 +22,11 @@ public class seatsController {
     }
 
 
+    public static void clearSeats() {
+        logger.info("Clearing catalog array");
+        seatsList.clear();
+    }
+
     private static void fillArrayOfseats(BuyTickets seats){
         logger.info("Felling seats Array");
         seatsList.add(seats);

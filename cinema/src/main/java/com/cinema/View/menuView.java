@@ -21,6 +21,7 @@ public class menuView {
             System.out.println("6: editar ingresso");
             System.out.println("7: deletar ingresso");
             System.out.println("8: editar dados do usuario");
+            System.out.println("9: deslogar da aplicacao");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -54,6 +55,10 @@ public class menuView {
                 case 8:
                     EditUserCredentials();
                     break;    
+
+                    case 9:
+                    UnloagUser();
+                    break;
                 default:
                  
                     break;
@@ -131,6 +136,15 @@ public class menuView {
             editUserInfo.main(new String[0]);
         }catch (Exception e){
             logger.error("Erro Executing edit user credentials" + e.getMessage());
+
+        }
+    }
+
+    public static void UnloagUser(){
+        try {
+            unloagUserView.main(new String[0]);
+        }catch (Exception e){
+            logger.error("Erro Executing Unloag user" + e.getMessage());
 
         }
     }
