@@ -1,97 +1,49 @@
 package com.cinema.Model;
 
 
-public class Catalogue {
+public class  Catalogue extends Movies {
     
-    private String nome;
-    private String[] genero;
-    private String classificacao;
-    private int hora;
-    private int minuto;
-    private String[] seat;
-
-
-    public Catalogue(String nome) {
-        this.nome = nome;
+    public Catalogue() {
+        super();
     }
 
-
-    public Catalogue() {}
-
-    
+    public Catalogue(String nome) {
+        super();
+        setNome(nome);
+    }
 
     public Catalogue(String nome, String[] seat) {
-        this.nome = nome;
-        this.seat = seat;
+        super();
+        setNome(nome);
+        setSeat(seat);
     }
 
 
     public Catalogue(String nome, int hora, int minuto) {
-        this.nome = nome;
-        this.hora = hora;
-        this.minuto = minuto;
+        super();
+        setNome(nome);
+        setHora(hora);
+        setMinuto(minuto);
     }
 
 
     public Catalogue(String nome, String[] genero, String classificacao, int hora, int minuto, String[] seat) {
-        this.nome = nome;
-        this.genero = genero;
-        this.classificacao = classificacao;
-        this.hora = hora;
-        this.minuto = minuto;
-        this.seat = seat;
+        super();
+        setNome(nome);
+        setGenero(genero);
+        setClassificacao(classificacao);
+        setHora(hora);
+        setMinuto(minuto);
+        setSeat(seat);
     }
 
 
     public Catalogue(String nome, String[] genero, String classificacao, int hora, int minuto) {
-            this.nome = nome;
-            this.genero = genero;
-            this.classificacao = classificacao;
-            this.hora = hora;
-            this.minuto = minuto;
+        super();
+        setNome(nome);
+        setGenero(genero);
+        setClassificacao(classificacao);
+        setHora(hora);
+        setMinuto(minuto);
         }
-
-
-
-    //getters
-    public String getNome() {
-        return nome;
-    }
-
-
-
-    public String[] getGenero() {
-        return genero;
-    }
-
-
-
-    public String getClassificacao() {
-        return classificacao;
-    }
-
-
-
-    public int getHora() {
-        return hora;
-    }
-
-
-
-    public int getMinuto() {
-        return minuto;
-    }
-
-
-    public String[] getSeat() {
-        return seat;
-    }
-
-
-    public void setSeat(String[] seat) {
-        this.seat = seat;
-    }
-
-
-
 }

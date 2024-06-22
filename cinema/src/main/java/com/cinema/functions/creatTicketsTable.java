@@ -35,7 +35,7 @@ public class creatTicketsTable {
                 
                 writeTicket(session, tickets, quantity);
             }catch(IOException e){
-                logger.error("erro folder does no exists");
+                logger.error(e.toString());
                 throw new ErroReadingFiles(ErroReadingFiles.standadartMessage(e));
             }            
          }
