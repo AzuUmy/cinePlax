@@ -3,31 +3,26 @@ package com.cinema.functions;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class readFoodSalesTicket {
     private static final Logger logger = LogManager.getLogger(readFoodSalesTicket.class);
-    private File salesDir = new File("/Users/gabriel_lourenco/Documents/Codigos/cinePlax/cinema/database/foodSales");
 
-    public String readFood(String foodName) {
-        File salesTicket = new File(salesDir, foodName + ".txt");
+    public static ArrayList<String> readFoodFile(String foodName) {
+        ArrayList<String> listaArquivo = new ArrayList<>();
+        try {
+            File salesDir = new File("/Users/gabriel_lourenco/Documents/Codigos/cinePlax/cinema/database/foodSales/"+foodName+".txt");
+            Scanner leitorArquivo = new Scanner(salesDir);
 
-        if (!salesTicket.exists()) {
-            logger.error("Sales ticket does not exist: " + salesTicket.getName());
-            return null;
-        }
-
-        StringBuilder content = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(new FileReader(salesTicket))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append("\n");
+            while (leitorArquivo.hasNextLine()) {
+                String linha = leitorArquivo.nextLine();
+                listaArquivo.add(linha);
             }
-            logger.info("Finished reading the sales ticket");
+            leitorArquivo.close();
         } catch (IOException e) {
-            logger.error("Error reading the sales ticket", e);
-            return null;
+            logger.error("Erro ao ler arquivo " + e.getMessage());
         }
-
-        return content.toString();
+            return listaArquivo;
     }
 }

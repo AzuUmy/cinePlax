@@ -37,14 +37,9 @@ import java.io.PrintWriter;
 
     private void writeTicket( Food food, int qtd, File salesTicket) {
         try (FileWriter fileWriter = new FileWriter(salesTicket, true);
-             PrintWriter writer = new PrintWriter(fileWriter)) {
-
-            writer.println("----- Nota Fiscal -----");
-            writer.println("Item: " + food.getName());
-            writer.println("Descrição: " + food.description());
-            writer.println("Quantidade: " + qtd);
-            writer.println("Valor: " + food.getPrice() * qtd);
-            writer.println("-----------------------------");
+            PrintWriter writer = new PrintWriter(fileWriter)) {    
+            
+            writer.println("[Item: " + food.getName() + "Descrição: " + food.description()+ "Quantidade: " + qtd + "Valor: " + food.getPrice() * qtd + "]");
 
             logger.info("Finished writing to the sales ticket");
         } catch (IOException e) {
