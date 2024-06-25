@@ -15,6 +15,7 @@ public class FoodDeleteView {
 
         System.out.println("Digite o nome do alimento para deletar o ticket:");
         String name = scanner.nextLine();
+        SaleFoodController.deleteFoodTicket(name);
 
         try {
             System.out.println("Ticket deletado com sucesso!");
