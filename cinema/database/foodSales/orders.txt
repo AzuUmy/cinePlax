@@ -1,0 +1,2 @@
+Id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, Usuario: Andrew, Pedido: pipoca salgada com manteiga, Quantidade: 2;
+Id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, Usuario: Andrew, Pedido: pipoca doce com caramelo, Quantidade: 3;

@@ -42,7 +42,7 @@ public class readTicketsTable {
                     }
                     return FileVisitResult.CONTINUE;
                 }
-            });
+        });
 
             logger.info("Total user tickets found: " + allUserTickets.size());
         } catch (IOException e) {
@@ -56,7 +56,6 @@ public class readTicketsTable {
         logger.info("reading ticket files");
         List<movieTicket> userTickets = new ArrayList<>();
 
-        
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;

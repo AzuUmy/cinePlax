@@ -8,7 +8,6 @@ import com.cinema.Model.Catalogue;
 import com.cinema.functions.readMovieTable;
 
 
-
 public class cartazView {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
@@ -20,7 +19,7 @@ public class cartazView {
          List<Catalogue> catalogList = catalogueController.getCartaz();
       
 
-         //foreachLoop para visualizar o filme
+    //foreachLoop para visualizar o filme
          logger.info("Reading catalogue Array");
          for (Catalogue catalog : catalogList) {
             System.out.println("Nome: " + catalog.getNome());
@@ -30,20 +29,14 @@ public class cartazView {
                 if (i < generos.length - 1) {
                     System.out.print(", ");
                 }
-            }
+        }
             System.out.println();
             System.out.println("Classificacao: " + catalog.getClassificacao());
             System.out.println("Duracao: " + catalog.getHora() + "h " + catalog.getMinuto() + "min");
             System.out.println("----------------------");
         }
 
-        logger.info("Reading catalogue array complete");
-         
-       
+        logger.info("Reading catalogue array complete");    
     }
-
-  
-
-
 
 }

@@ -1,0 +1,2 @@
+nome: pipoca doce com caramelo, preco: 22.00, description: pipoca com caramelo e corantes artificiais;
+nome: pipoca salgada com manteiga, preco: 17.00, description: pipoca banhada com manteiga;

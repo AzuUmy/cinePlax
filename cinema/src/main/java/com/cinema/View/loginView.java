@@ -5,6 +5,7 @@ import java.util.UUID;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.cinema.CinePlax.Main;
+import com.cinema.Controller.SaleFoodController;
 import com.cinema.Controller.SessionManager;
 import com.cinema.Controller.buyTicketController;
 import com.cinema.Controller.deleteTicket;
@@ -51,6 +52,7 @@ public class loginView {
             deleteTicket.validateUserInSession(email);
             editUserData.validateUserInSession(email);
             UnloagController.validateUserInSession(email);
+            SaleFoodController.validateUserInSession(email);
         }else{
             logger.warn("Credentials no founded user not loged in");
         }

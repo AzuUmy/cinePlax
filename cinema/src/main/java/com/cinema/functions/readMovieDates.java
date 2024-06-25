@@ -9,7 +9,7 @@ import com.cinema.CinePlax.Main;
 import com.cinema.Controller.catalogueDatesController;
 
 public class readMovieDates {
-      private static final Logger logger = LogManager.getLogger(Main.class);
+private static final Logger logger = LogManager.getLogger(Main.class);
 private static File datesFile = new File("D:\\cinema\\cinema\\database\\moviesDate");
 
 

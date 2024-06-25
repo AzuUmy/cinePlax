@@ -13,7 +13,7 @@ public class Main {
 
     }
 
- 
+
     public static void executarMenu(){
         try {
             logger.info("Executing main block");

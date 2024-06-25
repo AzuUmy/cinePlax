@@ -35,7 +35,7 @@ public class readMovieTable {
                 int minute = 0;
                 String[] genero = null; 
 
-               while ((line = reader.readLine()) != null) {
+                while ((line = reader.readLine()) != null) {
 
                 logger.info("Filling Variables with data");
                     if(line.contains("nome:")) {
@@ -65,7 +65,7 @@ public class readMovieTable {
                         logger.info("reading duration from file");
                         int start = line.indexOf("duracao:") + "duracao:".length();
                         int end = line.indexOf(";", start);
-                        if (end == -1) {
+                    if (end == -1) {
                             end = line.length();
                         }
                        
@@ -73,15 +73,11 @@ public class readMovieTable {
                          String[] movieDuration = duracao.split("\\s*\\.\\s*");
 
 
-                        if (movieDuration.length == 2) {
+                    if (movieDuration.length == 2) {
                            hour = Integer.parseInt(movieDuration[0].trim());
                            minute = Integer.parseInt(movieDuration[1].trim());
-   
                         }
-                     
                     }
-
-
 
                     logger.info("Reading file complete");
                     logger.info("Pushing data into controller");

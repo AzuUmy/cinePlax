@@ -11,8 +11,6 @@ public class editTicket {
     private static  UUID id = null;
     private static final Logger logger = LogManager.getLogger(Main.class);
 
-
-
     public static movieTicket editTicketData(movieTicket editeDate){
         logger.info("calling method do edit ticket date");
         userSession session = SessionManager.getUserDataFromSession(id);
@@ -42,7 +40,6 @@ public class editTicket {
 
         return null;
     }
-
 
     public static movieTicket editSeats(movieTicket edMovieTicket){
         userSession session = SessionManager.getUserDataFromSession(id);

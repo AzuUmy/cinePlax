@@ -9,7 +9,7 @@ import com.cinema.Model.userSession;
 import com.cinema.functions.deleteTicketFile;
 
 public class deleteTicket {
-        private static final Logger logger = LogManager.getLogger(Main.class);
+    private static final Logger logger = LogManager.getLogger(Main.class);
     private static  UUID id = null;
 
 
@@ -23,12 +23,9 @@ public class deleteTicket {
 
             String movieName = deleteTicket.getNome();
 
-
             Catalogue deleteUserTicket = new movieTicket(movieName);
-
             
             deleteTicketFile.deleteUserTicket(session, deleteUserTicket);
-
 
 
         }else{

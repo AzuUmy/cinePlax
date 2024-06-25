@@ -6,6 +6,11 @@ public class Food implements ItemSale {
     private String description;
 
 
+
+    public Food() {
+        
+    }
+
     public Food(String name, double price, String description) {
         this.name = name;
         this.price = price;
@@ -24,6 +29,6 @@ public class Food implements ItemSale {
 
     @Override
     public String description() {
-        return name + " - " + price + " - " + description;
+        return description;
     }
 }

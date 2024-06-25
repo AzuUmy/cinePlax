@@ -3,11 +3,14 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.cinema.CinePlax.Main;
+import com.cinema.exception.ErroReadingFiles;
+import com.cinema.functions.readFoodSalesTicket;
+
 
 public class menuView {
     final static Scanner scanner = new Scanner(System.in);
      private static final Logger logger = LogManager.getLogger(Main.class);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ErroReadingFiles {
         logger.info("running main menu");
         int runtime = 100;
 
@@ -30,34 +33,34 @@ public class menuView {
             switch (choice) {
                 case 1:
                     executeCreatUser();
-                    break;
+                break;
 
                 case 2:
                     executeCartaz();
-                    break;
+                break;
             
                 case 3:
                     login();
-                    break;
+                break;
 
                 case 4: 
                     buy();
-                    break;
+                break;
                 case 5:
                     viewBougthTickets();
-                    break;  
+                break;  
                     
                 case 6:
                     editUserTicket();
-                    break;
+                break;
 
                 case 7:
                     deleteTicker(); 
-                    break;
+                break;
 
                 case 8:
                     buyFood();
-                    break;     
+                break;     
                 
                 case 9:
                     deleteFood();
@@ -69,10 +72,19 @@ public class menuView {
 
                 case 11:
                     EditUserCredentials();
-                    break;    
+                break;    
 
-                    case 12:
+                case 12:
                     UnloagUser();
+                break;
+
+                    case 13:
+
+                    //debug porpuse
+
+                    readFoodSalesTicket read = new readFoodSalesTicket();
+                read.readFood();
+
                     break;
                 default:
                  
