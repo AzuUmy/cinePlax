@@ -27,23 +27,13 @@ public class SaleFoodController {
         }
     }
 
-    // Validação da sessão do usuário
-    public static void validateUserInSession(String email) {
-        logger.info("Validating user session in buy food method");
-        if (SessionManager.isUserLoggedIn(email)) {
-            logger.info("User is logged in");
-            userSession userSession = SessionManager.getUserSession(email);
-            id = userSession.getUserId();
-        }
-    }
-
     // Deleção de tickets de alimentos
-    public static void deleteFoodTicket(Food food) {
+    public static void deleteFoodTicket(String foodName) {
         logger.info("Calling method to delete food ticket");
         userSession session = SessionManager.getUserDataFromSession(id);
         if (session != null) {
             logger.info("User session validated");
-            DeleteFoodTicket.deleteUserFoodTicket(session, food);
+            DeleteFoodTicket.deleteUserFoodTicket(session, foodName);
         } else {
             logger.error("Error validating user, not logged in");
         }
