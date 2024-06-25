@@ -14,16 +14,17 @@ public class menuView {
         for(int i = 0; i < runtime; i++){
             System.out.println("Menu");
             System.out.println("1: Cadastrar usuario");
-            System.out.println("2: listar filmes em cartaz");
+            System.out.println("2: Listar filmes em cartaz");
             System.out.println("3: Logar na aplicacao");
-            System.out.println("4: comprar ingresso");
-            System.out.println("5: mostrar ingressos comprados");
-            System.out.println("6: editar ingresso");
-            System.out.println("7: deletar ingresso");
+            System.out.println("4: Comprar ingresso");
+            System.out.println("5: Mostrar ingressos comprados");
+            System.out.println("6: Editar ingresso");
+            System.out.println("7: Deletar ingresso");
             System.out.println("8: Comprar comida");
             System.out.println("9: Deletar comida");
-            System.out.println("10: editar dados do usuario");
-            System.out.println("11: deslogar da aplicacao");
+            System.out.println("10: Mostrar ticket de comida");
+            System.out.println("11: Editar dados do usuario");
+            System.out.println("12: Deslogar da aplicacao");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -60,13 +61,17 @@ public class menuView {
                 
                 case 9:
                     deleteFood();
-                break;     
-
+                break; 
+                
                 case 10:
+                    readFood();
+                break;
+
+                case 11:
                     EditUserCredentials();
                     break;    
 
-                    case 11:
+                    case 12:
                     UnloagUser();
                     break;
                 default:
@@ -146,6 +151,14 @@ public class menuView {
             FoodDeleteView.main(new String[0]);
         }catch (Exception e){
             logger.error("Erro Executing food buy" + e.getMessage());
+        }
+    }
+
+    public static void readFood(){
+        try{
+            readFoodView.main(new String[0]);
+        } catch(Exception e){
+            logger.error("Erro Executing read food" + e.getMessage());
         }
     }
 

@@ -8,6 +8,7 @@ import com.cinema.Model.Food;
 import com.cinema.exception.ErroReadingFiles;
 import com.cinema.functions.CreateFoodTickets;
 import com.cinema.functions.DeleteFoodTicket;
+import com.cinema.functions.readFoodSalesTicket;
 
 public class SaleFoodController {
     private static final Logger logger = LogManager.getLogger(Main.class);
@@ -25,5 +26,13 @@ public class SaleFoodController {
     public static void deleteFoodTicket(String foodName) {
         logger.info("Calling method to delete food ticket");
         DeleteFoodTicket.deleteFoodTicket(foodName);
+    }
+
+    public static void callReadFood(String foodName){
+        logger.info("Calling method to reading food ticket");
+        
+        readFoodSalesTicket readFood = new readFoodSalesTicket();
+
+        System.out.println(readFood.readFood(foodName));
     }
 }

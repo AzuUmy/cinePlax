@@ -1,16 +1,14 @@
 package com.cinema.functions;
 
 import com.cinema.Model.Food;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class CreateFoodTickets {
+    public class CreateFoodTickets {
     private static final Logger logger = LogManager.getLogger(CreateFoodTickets.class);
     private File salesDir = new File("/Users/gabriel_lourenco/Documents/Codigos/cinePlax/cinema/database/foodSales");
 
@@ -18,7 +16,7 @@ public class CreateFoodTickets {
         logger.info("Creating food sales ticket");
 
         if (!salesDir.exists()) {
-            salesDir.mkdirs(); // Cria o diretório se não existir
+            salesDir.mkdirs(); 
         }
 
         File salesTicket = new File(salesDir, food.getName() + ".txt");
@@ -30,7 +28,7 @@ public class CreateFoodTickets {
                 logger.warn("Sales ticket already exists: " + salesTicket.getName());
             }
             
-            writeTicket(food, quantity, salesTicket); // Sempre chama o método para escrever no ticket
+            writeTicket(food, quantity, salesTicket); 
 
         } catch (IOException e) {
             logger.error("Error creating or writing to sales ticket", e);
