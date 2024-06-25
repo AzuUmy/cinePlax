@@ -20,8 +20,10 @@ public class menuView {
             System.out.println("5: mostrar ingressos comprados");
             System.out.println("6: editar ingresso");
             System.out.println("7: deletar ingresso");
-            System.out.println("8: editar dados do usuario");
-            System.out.println("9: deslogar da aplicacao");
+            System.out.println("8: Comprar comida");
+            System.out.println("9: Deletar comida");
+            System.out.println("10: editar dados do usuario");
+            System.out.println("11: deslogar da aplicacao");
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -53,10 +55,18 @@ public class menuView {
                     break;
 
                 case 8:
+                    buyFood();
+                    break;     
+                
+                case 9:
+                    deleteFood();
+                break;     
+
+                case 10:
                     EditUserCredentials();
                     break;    
 
-                    case 9:
+                    case 11:
                     UnloagUser();
                     break;
                 default:
@@ -120,6 +130,22 @@ public class menuView {
             editTicketView.main(new String[0]);
         }catch (Exception e){
             logger.error("Erro Executing edit ticket" + e.getMessage());
+        }
+    }
+
+    public static void buyFood(){
+        try {
+            FoodBuyView.main(new String[0]);
+        }catch (Exception e){
+            logger.error("Erro Executing food buy" + e.getMessage());
+        }
+    }
+
+    public static void deleteFood(){
+        try {
+            FoodDeleteView.main(new String[0]);
+        }catch (Exception e){
+            logger.error("Erro Executing food buy" + e.getMessage());
         }
     }
 
