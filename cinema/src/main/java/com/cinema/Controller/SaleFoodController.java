@@ -1,7 +1,4 @@
 package com.cinema.Controller;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,11 +7,10 @@ import com.cinema.Model.Food;
 import com.cinema.Model.userSession;
 import com.cinema.exception.ErroReadingFiles;
 import com.cinema.functions.CreateFoodTickets;
-import com.cinema.functions.DeleteFoodTicket;
 
 public class SaleFoodController {
     private static final Logger logger = LogManager.getLogger(Main.class);
-    private static Map<UUID, Food> userOrders = new HashMap<>();
+
 
     private static UUID id = null;
 
@@ -30,21 +26,9 @@ public class SaleFoodController {
         }else{
             logger.info("User not Loged in"); 
         }
-
-        
+ 
     }
 
-    // Deleção de tickets de alimentos
-    public static void deleteFoodTicket(String foodName) {
-        logger.info("Calling method to delete food ticket");
-        DeleteFoodTicket.deleteFoodTicket(foodName);
-    }
-
-    
-    public static void callReadFood(String foodName){
-        logger.info("Calling method to reading food ticket");
-      
-    }
 
 
  public static void validateUserInSession(String email){

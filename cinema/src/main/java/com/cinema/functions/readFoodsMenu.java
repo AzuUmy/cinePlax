@@ -15,6 +15,7 @@ public class readFoodsMenu {
 
 
     public static void readMenu() throws ErroReadingFiles{
+        FoodMenuController.clearTickets();
         File menuFile = new File(foodMenu, "menu.txt");
 
 

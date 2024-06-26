@@ -29,8 +29,6 @@ public class readUserTickets {
             logger.info("uer not loged in");
         }
       
-              
-
              return null;
 
     }

@@ -83,7 +83,7 @@ public class menuView {
                     //debug porpuse
 
                     readFoodSalesTicket read = new readFoodSalesTicket();
-                read.readFood();
+                    read.readFood();
 
                     break;
                 default:

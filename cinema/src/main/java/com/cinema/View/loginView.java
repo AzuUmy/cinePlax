@@ -13,6 +13,7 @@ import com.cinema.Controller.editTicket;
 import com.cinema.Controller.editUserData;
 import com.cinema.Controller.loginController;
 import com.cinema.Controller.readUserTickets;
+import com.cinema.Controller.userOrders;
 import com.cinema.Controller.UnloagController;
 import com.cinema.Model.login;
 import com.cinema.Model.userSession;
@@ -53,6 +54,7 @@ public class loginView {
             editUserData.validateUserInSession(email);
             UnloagController.validateUserInSession(email);
             SaleFoodController.validateUserInSession(email);
+            userOrders.validateUserInSession(email);
         }else{
             logger.warn("Credentials no founded user not loged in");
         }

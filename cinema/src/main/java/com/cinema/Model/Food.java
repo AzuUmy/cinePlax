@@ -4,12 +4,21 @@ public class Food implements ItemSale {
     private String name;
     private double price;
     private String description;
-
+    private int quantity;
 
 
     public Food() {
         
     }
+
+    
+
+    public Food(String name, int quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
+
+
 
     public Food(String name, double price, String description) {
         this.name = name;
@@ -31,4 +40,13 @@ public class Food implements ItemSale {
     public String description() {
         return description;
     }
+
+
+
+    @Override
+    public int getQuantity() {
+      return quantity;
+    }  
+
+    
 }

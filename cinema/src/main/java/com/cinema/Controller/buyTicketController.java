@@ -9,8 +9,8 @@ import com.cinema.exception.ErroReadingFiles;
 import com.cinema.functions.creatTicketsTable;
 
 public class buyTicketController {
- private static final Logger logger = LogManager.getLogger(Main.class);
-    private static  UUID id = null;
+private static final Logger logger = LogManager.getLogger(Main.class);
+private static  UUID id = null;
 
     public static BuyTickets buyMovieTickets(BuyTickets tickets, int quantity) throws ErroReadingFiles{
             logger.info("calling method to buy movie tickets");

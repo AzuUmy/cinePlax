@@ -1,2 +1,11 @@
-Id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, Usuario: Andrew, Pedido: pipoca salgada com manteiga, Quantidade: 2;
-Id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, Usuario: Andrew, Pedido: pipoca doce com caramelo, Quantidade: 3;
+id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, usuario: Andrew, pedido: pipoca salgada com manteiga, quantidade: 3;
+id: 258141ed-3460-4757-96e9-7aa06ba20bee, usuario: Slash, pedido: pipoca salgada com manteiga, quantidade: 1;
+id: 258141ed-3460-4757-96e9-7aa06ba20bee, usuario: Slash, pedido: pipoca salgada com manteiga, quantidade: 2;
+id: 9acdaaac-6021-4083-9543-1de2c61f1d25, usuario: Leticinha do Grau, pedido: pipoca salgada com manteiga, quantidade: 2;
+id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, usuario: Andrew, pedido: pipoca doce com caramelo, quantidade: 1;
+id: 9acdaaac-6021-4083-9543-1de2c61f1d25, usuario: Leticinha do Grau, pedido: pipoca salgada com manteiga, quantidade: 1;
+id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, usuario: Andrew, pedido: pipoca salgada com manteiga, quantidade: 1;
+id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, usuario: Andrew, pedido: pipoca doce com caramelo, quantidade: 1;
+id: 910ac528-e0c0-42a6-888f-9b9d3dcf8a62, usuario: Andrew, pedido: pipoca salgada com manteiga, quantidade: 1;
+id: bdc91519-2646-40c1-b6f6-b2f12d00f076, usuario: carlos, pedido: pipoca salgada com manteiga, quantidade: 1;
+id: bdc91519-2646-40c1-b6f6-b2f12d00f076, usuario: carlos, pedido: pipoca doce com caramelo, quantidade: 2;

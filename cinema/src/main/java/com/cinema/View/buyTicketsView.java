@@ -162,7 +162,6 @@ public static void main(String[] args) throws Exception  {
 
            }
 
- 
         
      }else {
         logger.info("no movies avaible");
