@@ -3,6 +3,8 @@ package com.cinema.functions;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.UUID;
 
 public class readFoodSalesTicket {
@@ -63,7 +65,7 @@ public class readFoodSalesTicket {
                 
 
             }
-            logger.info("Finished reading the sales ticket");
+            leitorArquivo.close();
         } catch (IOException e) {
             logger.error("Error reading the sales ticket" + e);
         }

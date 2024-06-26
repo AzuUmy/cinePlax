@@ -44,10 +44,9 @@ import java.io.PrintWriter;
 
     private void writeTicket(String id,  String user, String order, int quantity, File salesTicket) {
         try (FileWriter fileWriter = new FileWriter(salesTicket, true);
-             PrintWriter writer = new PrintWriter(fileWriter)) {
-
-           writer.println("Id: " +  id + "," + " " +  "Usuario: " + user + "," + " "
-            + "Pedido: " + order + "," + " " + "Quantidade: " + quantity + ";");
+            PrintWriter writer = new PrintWriter(fileWriter)) {    
+            
+            writer.println("[Item: " + food.getName() + "Descrição: " + food.description()+ "Quantidade: " + qtd + "Valor: " + food.getPrice() * qtd + "]");
 
             logger.info("Finished writing to the sales ticket");
         } catch (IOException e) {

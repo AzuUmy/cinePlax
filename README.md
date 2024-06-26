@@ -1,4 +1,4 @@
-# Biblioteca-API
+# Cineplax
 
 Projeto destinado a estudos de desenvolvimento Back-End em Java. 
 

@@ -43,10 +43,7 @@ public class SaleFoodController {
     
     public static void callReadFood(String foodName){
         logger.info("Calling method to reading food ticket");
-        
-        //readFoodSalesTicket readFood = new readFoodSalesTicket();
-
-        //System.out.println(readFood.readFood(foodName));
+      
     }
 
 
