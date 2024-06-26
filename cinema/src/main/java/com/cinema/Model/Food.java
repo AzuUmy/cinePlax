@@ -11,7 +11,11 @@ public class Food implements ItemSale {
         
     }
 
-    
+
+    public Food(String name) {
+        this.name = name;
+    }
+
 
     public Food(String name, int quantity) {
         this.name = name;
@@ -25,6 +29,9 @@ public class Food implements ItemSale {
         this.price = price;
         this.description = description;
     }
+    
+
+
     
     @Override
     public String getName() {

@@ -12,7 +12,6 @@ import com.cinema.exception.ErroReadingFiles;
 
 public class readUserDatabase{
 
- 
 private static final File userDatabse = new File("D:\\cinema\\cinema\\database\\Usuarios");
 private static final Logger logger = LogManager.getLogger(Main.class);
 

@@ -161,7 +161,7 @@ public class editUserInfo {
 
     public static void deleteUserFromData(String id, String path){
         File userInfo = new File(path);
-        File storage = new File(userInfo.getParentFile(),"Storage.txt");
+        File storage = new File(userInfo.getParentFile(), "Storage.txt");
  
         try(BufferedReader reader = new BufferedReader(new FileReader(userInfo));
         BufferedWriter writer = new BufferedWriter(new FileWriter(storage))){

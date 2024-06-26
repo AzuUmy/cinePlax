@@ -35,7 +35,7 @@ public class editedTickedInfo {
     }
 
     public static void editDateOnFile(String date, String path){
-        logger.info("editing ticket date file");
+       logger.info("editing ticket date file");
        File file = new File(path);
        File storage = new File(file.getParentFile(), "Storage.txt");
 

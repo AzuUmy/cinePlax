@@ -7,6 +7,7 @@ import com.cinema.Model.Food;
 import com.cinema.Model.userSession;
 import com.cinema.exception.ErroReadingFiles;
 import com.cinema.functions.CreateFoodTickets;
+import com.cinema.functions.DeleteFoodTicket;
 
 public class SaleFoodController {
     private static final Logger logger = LogManager.getLogger(Main.class);
@@ -30,6 +31,18 @@ public class SaleFoodController {
     }
 
 
+    public static void deletOder(Food food){
+        userSession session = SessionManager.getUserDataFromSession(id);
+       if(session != null){
+           
+        System.out.println(food.getName());
+            DeleteFoodTicket.deleteFoodTicket(session, food);
+        }else{
+            logger.info("User not Loged in"); 
+        }
+    }
+
+
 
  public static void validateUserInSession(String email){
         logger.info("validating user session in buy ticket method");
@@ -39,7 +52,4 @@ public class SaleFoodController {
             id = UserSession.getUserId();
         }
     }
-
-
-
 }
